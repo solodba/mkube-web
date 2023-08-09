@@ -114,4 +114,7 @@ Modern browsers and Internet Explorer 10+.
 
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
+## 前后端联调
+存在跨域访问问题, 有待解决.
+
 Copyright (c) 2017-present PanJiaChen
