@@ -116,5 +116,6 @@ Modern browsers and Internet Explorer 10+.
 
 ## 前后端联调
 存在跨域访问问题, 有待解决.
+后续检查后端cors中间件的调用是否存在问题.
 
 Copyright (c) 2017-present PanJiaChen
