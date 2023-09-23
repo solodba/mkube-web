@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function createCronJob(data) {
   return request({
-    url: '/mkube/api/v1/cronjob',
+    url: '/k8s/cronjob',
     method: 'post',
     data
   })
@@ -12,7 +12,7 @@ export function getCronJobItemOrList(params) {
   let namespace = params.namespace
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/cronjob/" + namespace
+  let url = "/k8s/cronjob/" + namespace
   let query = []
   if (name !== undefined && name !== "") {
     query.push("name=" + name)
@@ -32,7 +32,7 @@ export function getCronJobItemOrList(params) {
 export function deleteCronJob(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/cronjob/" + namespace + "/" + name
+  let url = "/k8s/cronjob/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",

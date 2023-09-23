@@ -4,7 +4,7 @@ import request from '@/utils/request'
 export function deleteSa(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/sa/" + namespace + "/" + name
+  let url = "/k8s/sa/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",
@@ -14,7 +14,7 @@ export function deleteSa(params) {
 
 export function createSa(data) {
   return request({
-    url: '/mkube/api/v1/sa',
+    url: '/k8s/sa',
     method: 'post',
     data
   })
@@ -24,7 +24,7 @@ export function getSaList(params) {
   let namespace = params.namespace
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/sa/" + namespace
+  let url = "/k8s/sa/" + namespace
   let query = []
   if (name !== undefined && name !== "") {
     query.push("name=" + name)

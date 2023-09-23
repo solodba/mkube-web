@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function updateNodeLabel(data) {
   return request({
-    url: '/mkube/api/v1/node/label',
+    url: '/k8s/node/label',
     method: 'put',
     data
   })
@@ -10,7 +10,7 @@ export function updateNodeLabel(data) {
 
 export function updateNodeTaint(data) {
   return request({
-    url: '/mkube/api/v1/node/taint',
+    url: '/k8s/node/taint',
     method: 'put',
     data
   })
@@ -20,7 +20,7 @@ export function updateNodeTaint(data) {
 export function getNodeItemOrList(params) {
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/node"
+  let url = "/k8s/node"
   let query = []
   if (name !== undefined && name !== "") {
     query.push("nodeName=" + name)

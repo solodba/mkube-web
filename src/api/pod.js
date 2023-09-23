@@ -3,7 +3,7 @@ import da from "element-ui/src/locale/lang/da";
 
 export function createPod(data) {
   return request({
-    url: '/mkube/api/v1/pod',
+    url: '/k8s/pod',
     method: 'post',
     data
   })
@@ -14,7 +14,7 @@ export function getPodItemOrList(params) {
   let name = params.name
   let keyword = params.keyword
   let nodeName = params.nodeName
-  let url = "/mkube/api/v1/pod/" + namespace
+  let url = "/k8s/pod/" + namespace
   let query = []
   if (nodeName !== undefined && nodeName !== "") {
     query.push("nodeName=" + nodeName)
@@ -37,7 +37,7 @@ export function getPodItemOrList(params) {
 export function deletePod(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/pod/" + namespace + "/" + name
+  let url = "/k8s/pod/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",

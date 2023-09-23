@@ -3,7 +3,7 @@ import da from "element-ui/src/locale/lang/da";
 
 export function createDaemonSet(data) {
   return request({
-    url: '/mkube/api/v1/daemonset',
+    url: '/k8s/daemonset',
     method: 'post',
     data
   })
@@ -14,7 +14,7 @@ export function getDaemonSetItemOrList(params) {
   let name = params.name
   let keyword = params.keyword
   let nodeName = params.nodeName
-  let url = "/mkube/api/v1/daemonset/" + namespace
+  let url = "/k8s/daemonset/" + namespace
   let query = []
   if (nodeName !== undefined && nodeName !== "") {
     query.push("nodeName=" + nodeName)
@@ -37,7 +37,7 @@ export function getDaemonSetItemOrList(params) {
 export function deleteDaemonSet(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/daemonset/" + namespace + "/" + name
+  let url = "/k8s/daemonset/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",

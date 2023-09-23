@@ -4,7 +4,7 @@ import request from '@/utils/request'
 export function deletePVC(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/pvc/" + namespace + "/" + name
+  let url = "/k8s/pvc/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",
@@ -14,7 +14,7 @@ export function deletePVC(params) {
 
 export function createPVC(data) {
   return request({
-    url: '/mkube/api/v1/pvc',
+    url: '/k8s/pvc',
     method: 'post',
     data
   })
@@ -24,7 +24,7 @@ export function getPVCList(params) {
   let namespace = params.namespace
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/pvc/" + namespace
+  let url = "/k8s/pvc/" + namespace
   let query = []
   if (name !== undefined && name !== "") {
     query.push("name=" + name)

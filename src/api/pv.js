@@ -4,7 +4,7 @@ import request from '@/utils/request'
 export function deletePV(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/pv/" + namespace + "/" + name
+  let url = "/k8s/pv/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",
@@ -12,7 +12,7 @@ export function deletePV(params) {
 }
 export function createPV(data) {
   return request({
-    url: '/mkube/api/v1/pv',
+    url: '/k8s/pv',
     method: 'post',
     data
   })
@@ -22,7 +22,7 @@ export function getPVList(params) {
   let namespace = params.namespace
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/pv/" + namespace
+  let url = "/k8s/pv/" + namespace
   let query = []
   if (name !== undefined && name !== "") {
     query.push("name=" + name)

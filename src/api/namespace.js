@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getNamespaceList() {
   return request({
-    url: 'mkube/api/v1/namespace',
+    url: '/k8s/namespace',
     method: 'get'
   })
 }

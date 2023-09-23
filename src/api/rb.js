@@ -4,7 +4,7 @@ import request from '@/utils/request'
 export function deleteRb(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/rb/" + namespace + "/" + name
+  let url = "/k8s/rb/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",
@@ -14,7 +14,7 @@ export function deleteRb(params) {
 
 export function createRb(data) {
   return request({
-    url: '/mkube/api/v1/rb',
+    url: '/k8s/rb',
     method: 'post',
     data
   })
@@ -24,7 +24,7 @@ export function getRbDetailOrList(params) {
   let namespace = params.namespace
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/rb"
+  let url = "/k8s/rb"
   let query = []
   if (namespace !== undefined && namespace !== "") {
     query.push("namespace=" + namespace)

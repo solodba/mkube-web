@@ -4,7 +4,7 @@ import request from '@/utils/request'
 export function deleteIngRoute(params) {
   let namespace = params.namespace
   let name = params.name
-  let url = "/mkube/api/v1/ingroute/" + namespace + "/" + name
+  let url = "/k8s/ingroute/" + namespace + "/" + name
   return request({
     url: url,
     method: "delete",
@@ -14,7 +14,7 @@ export function deleteIngRoute(params) {
 
 export function createIngRoute(data) {
   return request({
-    url: '/mkube/api/v1/ingroute',
+    url: '/k8s/ingroute',
     method: 'post',
     data
   })
@@ -23,7 +23,7 @@ export function createIngRoute(data) {
 
 export function getMiddlewareList(params){
   let namespace = params.namespace
-  let url = "/mkube/api/v1/ingroute/" + namespace+"/middleware"
+  let url = "/k8s/ingroute/" + namespace+"/middleware"
   return request({
     url: url,
     method: "get",
@@ -34,7 +34,7 @@ export function getIngRouteItemOrList(params) {
   let namespace = params.namespace
   let name = params.name
   let keyword = params.keyword
-  let url = "/mkube/api/v1/ingroute/" + namespace
+  let url = "/k8s/ingroute/" + namespace
   let query = []
   if (name !== undefined && name !== "") {
     query.push("name=" + name)
