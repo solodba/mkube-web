@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       title: 'K8S运维管理中心',
-      logo: 'https://www.baidu.com'
+      logo: 'https://www.imooc.com/static/img/index/logo2020.png'
     }
   }
 }

@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 export function matchImage(params) {
-  let url = '/k8s/harbor/match?keyword=' + params.keyword
+  let url = '/harbor/match?keyword=' + params.keyword
   return request({
     url: url,
     method: 'get'
@@ -10,7 +10,7 @@ export function matchImage(params) {
 
 export function getProjects(params) {
   let query = []
-  let url = '/k8s/harbor/projects'
+  let url = '/harbor/projects'
   let currentPage = params.currentPage
   let pageSize = params.pageSize
   let keyword = params.keyword
@@ -34,7 +34,7 @@ export function getProjects(params) {
 
 export function getRepositories(params) {
   let query = []
-  let url = '/k8s/harbor/projects/' + params.projectName
+  let url = '/harbor/projects/' + params.projectName
   let currentPage = params.currentPage
   let pageSize = params.pageSize
   let keyword = params.keyword
@@ -61,7 +61,7 @@ export function getArtifacts(params) {
   let repositoryName = params.repositoryName
   let projectName = params.projectName
   let currentPage = params.currentPage
-  let url = '/k8s/harbor/projects/' + projectName + "/repositories/" + repositoryName
+  let url = '/harbor/projects/' + projectName + "/repositories/" + repositoryName
   let pageSize = params.pageSize
   let keyword = params.keyword
   if (currentPage !== undefined && currentPage !== "") {

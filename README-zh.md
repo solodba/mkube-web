@@ -1,6 +1,6 @@
 # vue-admin-template
 
-## kubeimooc-web开发环境说明
+## mkube-web开发环境说明
 - node版本：v16.19.1
 - npm版本：8.15.0
 - 编译环境：mac
@@ -113,9 +113,5 @@ Modern browsers and Internet Explorer 10+.
 ## License
 
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
-
-## 前后端联调
-存在跨域访问问题, 有待解决.
-后续检查后端cors中间件的调用是否存在问题.
 
 Copyright (c) 2017-present PanJiaChen

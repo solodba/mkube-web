@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: mkube-web-publish
+name: kubeimooc-web-publish
 
 environment:
   GOOS: linux
@@ -20,8 +20,8 @@ steps:
       username: admin
       password:
         from_secret: harbor_password
-      repo: harbor.codehrose.com/mkube/mkube-web
-      registry: harbor.codehrose.com
+      repo: harbor.codehorse.com/mkube/mkube-web
+      registry: harbor.codehorse.com
       tags:
         - v1.7
   - name: ssh commands
@@ -35,9 +35,9 @@ steps:
       script:
         #拉取镜像并重启 注意--需要提前在目标主机完成docker login
         - if [ $(docker ps -a | grep mkube-web | wc -l) -ge 1 ];then docker stop mkube-web && docker rm mkube-web; fi
-        - docker pull harbor.codehrose.com/mkube/mkube-web:v1.1
-        - export BACKEND_HOST=http://localhost:8882/
-        - docker run --name mkube-web --restart=always -d -p8081:80 -e BACKEND_HOST=$BACKEND_HOST harbor.codehrose.com/mkube/mkube-web:v1.1
+        - docker pull harbor.codehorse.com/mkube/mkube-web:v1.1
+        - export BACKEND_HOST=http://192.168.1.19:8082/
+        - docker run --name mkube-web --restart=always -d -p8081:80 -e BACKEND_HOST=$BACKEND_HOST harbor.codehorse.com/mkube/mkube-web:v1.1
 volumes:
   - name: hosts
     host:

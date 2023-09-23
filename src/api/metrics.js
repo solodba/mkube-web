@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 export function getDashboardData() {
-  let url = "/k8s/dashboard/usage"
+  let url = "/metrics/dashboard"
   return request({
     url: url,
     method: "get",
